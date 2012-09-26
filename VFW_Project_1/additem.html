@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<!--Meta Tags-->
+		<meta charset="utf-8" />
+		<meta name ="description" content="A mobile app for making goals to purchase your wishlist item(s)?" />
+		<meta name="keywords" content="iphone app, wishlist, online shopping, mobile" />
+		
+		<!-- Tell the robots to index-->
+		<meta name="robots" content="index, follow" />
+		
+		<!--Condition content for mobile browsers-->
+		<meta name="viewport" content="width=device-width"/>
+		
+		<!--Page Title-->
+		<title>WishList LayAway</title>
+		
+	</head>
+	<body>
+	
+		<header>
+			<h1>Add Item</h1>
+		</header>
+		
+		<form id="add-item" method="post" action="#">
+			<fieldset>
+				<legend>Item Info:</legend>
+				
+				<label for="item-name">Item Name:</label><br>
+				<input type="text" id="item-name" name="name" /><br><br>
+				
+				<label for="item-brand">Item Brand:</label><br>
+				<input type="text" id="item-brand" name="brand" /> <br><br>
+				
+				<label for="pledge">Pledge Date:</label><br>
+				<input type="date" id="pledge" name="pDate" /> <br><br>
+				
+				<label for="rank">Priority:</label><br>
+				<input type="radio" id="rank" name="priority" />Low<br>
+				<input type="radio" id="rank" name="priority" />Medium<br>
+				<input type="radio" id="rank" name="priority" />High<br><br>
+				
+				<label for="quantity">Quantity:</label><br>
+				<input type="range" min="1" max="10" /> <br><br>
+				
+				<label for="total-cost">Total Cost:</label><br>
+				<input type="text" id="total-cost" name="cost" size="7"/> <br><br>
+				
+				<label for="amount-now">How much can you put toward it now:</label><br>
+				<input type="text" id="amount-now" name="amount" size="7"/> <br><br>
+				
+				<label for="time">Purchase Time Frame:</label><br>
+				<select>
+				<option value="Less than a year">Less than a year</option>
+				<option value="Between 1-5 years">Between 1-5 years</option>
+				<option value="Between 5-10 years">Between 5-10 years</option>
+				<option value="More than 10 years">More than 10 years</option>
+			      </select> <br><br>
+				
+				<label for="motiv">What is your motivation to purchase this item:</label><br>
+				<textarea rows="5" cols="50" name="motivation" id="motiv">
+				</textarea><br>
+				
+				<a href="#">Clear Form</a>
+				<br>
+			</fieldset>
+		</form>
+		
+
+	</body>
+</html>
