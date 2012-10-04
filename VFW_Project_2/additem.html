@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+Christopher Rockwell
+Project: Web App Part 2
+Visual Frameworks 1210
+-->
+<html>
+	<head>
+	
+		<!--Meta Tags-->
+		<meta charset="utf-8" />
+		<meta name ="description" content="A mobile app for making goals to purchase your wishlist item(s)?" />
+		<meta name="keywords" content="iphone app, wishlist, online shopping, mobile" />
+		
+		<!-- Tell the robots to index-->
+		<meta name="robots" content="index, follow" />
+		
+		<!--Condition content for mobile browsers-->
+		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		
+		<!--Page Title-->
+		<title>WishList LayAway</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="css/iphone.css" type="text/css" />
+	</head>
+	<body>
+		<script type="text/javascript">
+			function updateTextInput(val) {
+			document.getElementById('textInput').value=val; 
+			}
+		</script>
+		<header>
+			<h1>Add Item</h1>
+		</header>
+		<div id="container">
+			<div class="button"><br>
+				<a href="#" id="displayLink">Display Data</a>
+				<a href="#" id="clearLink">Clear Data</a>
+				<a href="additem.html" id="addNew" style="display:none;">Add New</a>
+				</div><br>
+			<form id="add-item" method="post" action="#">
+				<fieldset id="item-info">
+					<legend>Item Info:</legend>
+					
+					<label for="item-name">Item Name:</label><br>
+					<input type="text" id="item-name" name="item-name" /><br><br>
+					
+					<label for="item-brand">Item Brand:</label><br>
+					<input type="text" id="item-brand" name="item-brand" /> <br><br>
+					
+					<label for="quantity" id="quan">Quantity: </label><br>
+					<input type="range" id="quantity" min="1" max="10" value ="1" onchange="updateTextInput(this.value);" /> 
+					<br>
+					
+					<label for="total-cost">Total Cost:</label><br>
+					<input type="text" id="total-cost" name="total-cost" placeholder="$00.00" /> <br><br>
+				</fieldset>
+
+				<fieldset id="commit">
+					<legend>Commitment Info:</legend>
+					
+					<label for="pledge">Pledge Date:</label><br>
+					<input type="date" id="pledge" name="pledge" placeholder="mm/dd/yyyy" /> <br><br>
+					
+					<label for="priority">Priority:</label><br>
+					<input type="radio" id="priority" name="priority" value="Low!"/> Low<br>
+					<input type="radio" id="priority" name="priority" value="Medium!!"/> Medium<br>
+					<input type="radio" id="priority" name="priority" value="High!!!"/> High<br><br>
+					
+					<label for="time" id="times">Purchase Time Frame:<br></label><br><br>
+					
+					<!--<select>
+						<option value="Less than a year">Less than a year</option>
+						<option value="Between 1-5 years">Between 1-5 years</option>
+						<option value="Between 5-10 years">Between 5-10 years</option>
+						<option value="More than 10 years">More than 10 years</option>
+					</select> <br><br>-->
+					
+					<label for="amount">Amount you can save toward it today:</label><br>
+					<input type="text" id="amount" name="amount" placeholder="$00.00" /> <br><br>
+					
+					<label for="motivation">Your motivation to purchase this item:</label><br>
+					<textarea rows="8" cols="22" name="motivation" id="motivation"></textarea><br>
+				</fieldset>
+					<input type="submit" id="submit" value="Submit" class="submit"/><a href="#">Clear Form</a>  <br>
+					
+					<br>
+				
+			</form>
+		</div>	
+		<script src="js/main.js" type="text/javascript"></script>
+	</body>
+</html>
