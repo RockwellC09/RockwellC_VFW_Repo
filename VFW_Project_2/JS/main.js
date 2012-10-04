@@ -86,7 +86,7 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     
     // function to store data entered by user
-    function storeData(){
+    function saveData(){
         var id =  Math.floor((Math.random()*10000000)+1); 
         //gather all form field values and store them in an object
         //Object properties contain array with the form label and input values
@@ -146,10 +146,10 @@ window.addEventListener("DOMContentLoaded", function(){
                 makeSubListItem.innerHTML = optSubText;
             }
         }
-        //makeList.innerHTML = "<br>";
     }
     
-    function clearLocal(){
+    //clear all data submitted
+    function clearData(){
         if(localStorage.length === 0){
             alert("There is no data to clear.");
         } else {
@@ -167,9 +167,9 @@ window.addEventListener("DOMContentLoaded", function(){
     var displayLink = $('displayLink');
     displayLink.addEventListener("click", getData);
     var clearLink = $('clearLink');
-    clearLink.addEventListener("click", clearLocal);
+    clearLink.addEventListener("click", clearData);
     var save = $('submit');
-    save.addEventListener("click", storeData);
+    save.addEventListener("click", saveData);
     
 });
 
