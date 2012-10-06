@@ -115,6 +115,7 @@ window.addEventListener("DOMContentLoaded", function(){
             window.location.reload();
         }
         toggleControls("on");
+        title.innerHTML = "<h1>WishList LayAway</h1>";
         var makeDiv = document.createElement('div');
         makeDiv.setAttribute("id", "items");
         var makeList = document.createElement('ul');
