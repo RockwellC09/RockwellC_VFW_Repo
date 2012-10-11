@@ -36,7 +36,7 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     
     // variable defaults
-    var timeFrames = ["Select an Option:", "Less than a year", "Between 1-5 years", "Between 5-10 years", "More than 10 years"];
+    var timeFrames = ["Select an Option", "0-6 months", "6 months to a year", "Between 1-3 years", "More than 3 years"];
     makeSel();
     var priorityValue;
     var isFirefox = testCSS('MozBoxSizing');
@@ -45,10 +45,12 @@ window.addEventListener("DOMContentLoaded", function(){
     //setting up an input button to display the current range position.
     var element = document.createElement("input");
           element.setAttribute("id", "textInput");
-          element.setAttribute("type", "button");
+          element.setAttribute("type", "text");
           element.setAttribute("value", "1");
-          element.setAttribute("style", "height:30px; ");
-         
+          element.setAttribute("oninput", "document.getElementById('quantity').value = this.value");
+          element.setAttribute("style", "width:35px; text-align: center; ");
+          element.setAttribute("onclick", "document.getElementById(id).select();");
+    
     var foo = document.getElementById("quan");
     function testCSS(prop) {
     return prop in document.documentElement.style;
@@ -191,10 +193,13 @@ window.addEventListener("DOMContentLoaded", function(){
         var item = JSON.parse(value);
         
         //show form
+        title.innerHTML = "<h1>Edit Item</h1>";
         toggleControls("off");
-        
+    
         $('item-name').value = item.name[1];
         $('item-brand').value = item.brand[1];
+        //set range slider display's value
+        $('textInput').value = item.quantity[1];
         $('quantity').value = item.quantity[1];
         $('total-cost').value = item.cost[1];
         $('pledge').value = item.date[1];
