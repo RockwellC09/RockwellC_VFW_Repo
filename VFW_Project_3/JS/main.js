@@ -151,7 +151,7 @@ window.addEventListener("DOMContentLoaded", function(){
                 var makeSubListItem =document.createElement('li');
                 makeSubList.appendChild(makeSubListItem);
                 if (obj[x][1] === "High!!!")   {
-                    makeSubListItem.style.color = "#CC2525";
+                    makeSubListItem.style.color = "#D9343C";
                 } else if (obj[x][1] === "Medium!!")   {
                     makeSubListItem.style.color = "#C4B50C";
                 } else if(obj[x][1] === "Low!"){
@@ -257,21 +257,21 @@ window.addEventListener("DOMContentLoaded", function(){
         var messages = [];
         //item name validation
         if (getItemName.value === "") {
-            var nameError = "Please enter an item name.";
+            var nameError = "Please enter the item name.";
             getItemName.style.border = "3px solid #D9343C";
             messages.push(nameError);
         }
         
         //item cost validation
         if(getCost.value === ""){
-            var costError = "Please enter the total cost for the item.";
+            var costError = "Please enter the total cost of this item.";
             getCost.style.border = "3px solid #D9343C";
             messages.push(costError);
         }
         
         //item time frame validation
         if (getTime.value === " ") {
-            var timeError = "Please select a purchase time frame.";
+            var timeError = "Please select a purchase time frame for this item.";
             getTime.style.border = "3px solid #D9343C";
             messages.push(timeError);
         }
@@ -308,7 +308,9 @@ window.addEventListener("DOMContentLoaded", function(){
                 alert("All items deleted.");
                 window.location.reload();
                 return false;
-            } 
+            } else {
+                alert("Your items were not deleted.");
+            }
         }
     }
     
