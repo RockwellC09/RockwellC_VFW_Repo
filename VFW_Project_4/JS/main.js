@@ -1,5 +1,5 @@
 // Christopher Rockwell
-// Project: Web App Part 3
+// Project: Web App Part 4
 // Visual Frameworks 1210
 
 // Wait until DOM is ready
@@ -150,6 +150,7 @@ window.addEventListener("DOMContentLoaded", function(){
             var makeSubList = document.createElement('ul');
             makeLi.appendChild(makeSubList)
             getImage(obj.priority[1], makeSubList);
+            getProgress(obj, makeSubList);
             for (var x in obj){
                 var makeSubListItem =document.createElement('li');
                 makeSubList.appendChild(makeSubListItem);
@@ -168,6 +169,16 @@ window.addEventListener("DOMContentLoaded", function(){
             }
             makeItemLinks(localStorage.key(i), linksLi); //creates our edit and delete button.links for each item in local storage
         }
+    }
+    
+    function getProgress(obj, makeSubList) {
+        var getVal = obj.amountSaved[1].replace(/\$/g,'');
+        var getMax = obj.cost[1].replace(/\$/g,'');
+        var percent = (getVal * 100) / getMax;
+        var prog = document.createElement('li');
+        prog.innerHTML = "<strong>Progress: </strong><progress max="+ getMax +" value="+ getVal +"></progress> " + percent + "%"
+        makeSubList.appendChild(prog);
+        
     }
     
     //get the image based of the priority selected
@@ -335,6 +346,7 @@ window.addEventListener("DOMContentLoaded", function(){
             }
         }
     }
+    
     
     // set link and click events
     var displayLink = $('displayLink');

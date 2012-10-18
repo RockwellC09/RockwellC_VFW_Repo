@@ -6,6 +6,9 @@ body    {
     font-size:18px;
     color:white;
 }
+
+.ui-progressbar .ui-progressbar-value { background-image: url(images/pbar-ani.gif); }
+
 header  {
     color: #292929;
     background: url(../images/title_center.png);
@@ -36,6 +39,9 @@ input      {
     -webkit-box-shadow: .5px .5px 3px #000;
     box-shadow: .5px .5px 3px #000;
     font-size: 18px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 }
 
 input:focus {
@@ -57,6 +63,9 @@ textarea {
     -moz-box-shadow: .5px .5px 3px #000;
     -webkit-box-shadow: .5px .5px 3px #000;
     box-shadow: .5px .5px 3px #000;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 }
 
 textarea:focus {
@@ -82,6 +91,9 @@ fieldset    {
     -moz-box-shadow: .5px .5px 3px #000;
     -webkit-box-shadow: .5px .5px 3px #000;
     box-shadow: .5px .5px 3px #000;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 }
 
 legend  {
@@ -115,9 +127,9 @@ a   {
  
     text-shadow: 1px 1px 1px rgba(255,255,255, .22);
  
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
  
     -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
     -moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
@@ -130,9 +142,35 @@ a   {
     transition: all 0.15s ease;
 
 }
+
+#about {
+    background: #292929;
+    margin-bottom: -5px;
+    padding: 5px;
+    display: none;
+}
+
+#aboutButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-top: 0px;
+    background: #292929;
+    -webkit-box-shadow: 0px 0px 0px rgba(0,0,0, .29), inset 0px 0px 0px rgba(255,255,255, .44);
+    -moz-box-shadow: 0px 0px 0px rgba(0,0,0, .29), inset 0px 0px 0px rgba(255,255,255, .44);
+    box-shadow: 0px 0px 0px rgba(0,0,0, .29), inset 0px 0px 0px rgba(255,255,255, .44);
+    color: white;
+    font-size:20px;
+}
+
 a:hover {
     opacity: .7;
 }
+
 a:active {
     opacity: .7;
 }
@@ -149,4 +187,67 @@ a:active {
     text-align: center;
     margin: 10px 40px 10px 40px;
 }
+
+progress,          /* All HTML5 progress enabled browsers */
+progress[role]     /* polyfill */
+{
+
+	/* Turns off styling - not usually needed, but good to know. */
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+
+	/* gets rid of default border in Firefox and Opera. */
+	border: none;
+
+	/* Needs to be in here for Safari polyfill so background images work as expected. */
+	background-size: auto;
+
+	/* Dimensions */
+	width: 200px;
+	height: 20px;
+
+}
+
+/* Polyfill */
+progress[role]:after {
+	background: none; /* removes default background from polyfill */
+}
+
+/* Ensure fallback text doesn't appear in polyfill */
+progress[role] strong {
+	display: none;
+}
+
+progress,                          /* Firefox  */
+progress[role][aria-valuenow] {    /* Polyfill */
+   background: #EDD6AF !important; /* !important is needed by the polyfill */
+}
+
+/* Chrome */
+progress::-webkit-progress-bar {
+    background: #EDD6AF;
+}
+
+/* IE10 */
+progress {
+    color:url(../images/pbar-ani.gif);
+}
+
+/* Firefox */
+progress::-moz-progress-bar {
+    background: url(../images/pbar-ani.gif);
+}
+
+/* Chrome */
+progress::-webkit-progress-value {
+    background: url(../images/pbar-ani.gif);
+}
+
+/* Polyfill */
+progress[aria-valuenow]:before  {
+    background: url(../images/pbar-ani.gif);
+}
+
+
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 Christopher Rockwell
-Project: Web App Part 3
+Project: Web App Part 4
 Visual Frameworks 1210
 -->
 <html>
@@ -22,6 +22,7 @@ Visual Frameworks 1210
 		<title>WishList LayAway</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="css/iphone.css" type="text/css" />
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
 	</head>
 	<body>
 		<!--update the input field that shows the slider value with the current slider value-->
@@ -35,6 +36,14 @@ Visual Frameworks 1210
 				<h1>Add Item</h1>
 			</div>
 		</header>
+		<div id="about">WishList LayAway is an app that helps wish listers set realistic goals to actually purchase the item or 
+			items on their wish list.</div>
+		<a href="#" id=aboutButton>About</a>
+		<script>
+			$("#aboutButton").click(function () {
+			  $("#about").slideToggle("slow");
+			});
+		</script>
 		<div id="container">
 			<div class="button"><br>
 				<a href="#" id="displayLink" disabled="disabled">Display Data</a>

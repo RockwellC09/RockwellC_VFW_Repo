@@ -7,7 +7,7 @@ var json = {
         "date": ["Pledge Date:", "10/17/2012"],
         "priority": ["Priority:", "High!!!"],
         "timeFrame": ["Time Frame:", "0-6 months"],
-        "amountSaved": ["Amount Saved:", "$200.00"],
+        "amountSaved": ["Amount Saved:", "$250.00"],
         "motivation": ["Motivation:", "Buying it for school."],
         "space": ["<br>", "<br>"]
     },
