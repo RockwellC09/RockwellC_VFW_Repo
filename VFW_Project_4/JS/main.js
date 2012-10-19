@@ -126,7 +126,7 @@ window.addEventListener("DOMContentLoaded", function(){
     //write data from local stroage to the browser
     function getData(){
         if (localStorage.length === 0){
-            alert("There is no data in local storage so we'll use default data was added.");
+            alert("There is no data in local storage so default data was added.");
             autoFillData();
         }
         
